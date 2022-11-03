@@ -22,18 +22,18 @@ export class CartService {
 
     if (indexCart === -1) {
       product.quantity = 1;
-      console.log(indexCart);
+      // console.log(indexCart);
       product.totalPrice = product.price;
       this._products.push(product);
     } else {
-      console.log(indexCart);
+      // console.log(indexCart);
       this._products[indexCart].quantity += 1;
       this._products[indexCart].totalPrice =
         this._products[indexCart].quantity * product.price;
     }
 
-    console.log(product);
-    console.log(this._products);
+    // console.log(product);
+    // console.log(this._products);
   }
 
   getTotalPrice(item: number) {
@@ -49,19 +49,5 @@ export class CartService {
 
   clearCart() {
     return (this._products = []);
-  }
-}
-
-export class Cart {
-  id?: any;
-  name: string;
-  price: number;
-  quantity: number;
-
-  constructor(id: any, name: string, price: number, quantity: number) {
-    this.id = id;
-    this.name = name;
-    this.price = price;
-    this.quantity = quantity;
   }
 }

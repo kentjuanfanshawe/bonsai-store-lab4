@@ -14,7 +14,8 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
-import { ProductComponent } from './components/product/product.component';
+import { ProductItemComponent } from './components/product-item/product-item.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ProductComponent } from './components/product/product.component';
     PageNotFoundComponent,
     AboutUsComponent,
     ContactUsComponent,
-    ProductComponent,
+    ProductItemComponent,
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,12 +38,13 @@ import { ProductComponent } from './components/product/product.component';
     BrowserAnimationsModule,
     RouterModule.forRoot([
       { path: 'products', component: ProductsListComponent },
+      { path: 'products/:productId', component: ProductDetailComponent },
       { path: 'cart', component: ShoppingCartComponent },
       { path: 'about-us', component: AboutUsComponent },
       { path: 'contact-us', component: ContactUsComponent },
       { path: 'product-list', component: ProductsListComponent },
       { path: 'shop', component: ProductsListComponent },
-      { path: '', redirectTo: '/about-us', pathMatch: 'full' },
+      { path: '', redirectTo: '/products', pathMatch: 'full' },
       { path: '404', component: PageNotFoundComponent },
       {
         path: '**',

@@ -7,4 +7,5 @@ export interface Product {
   price: number;
   quantity: number;
   totalPrice?: number;
+  rate?: number;
 }
