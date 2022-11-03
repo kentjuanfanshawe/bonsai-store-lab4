@@ -1,0 +1,90 @@
+<p>
+  <mat-toolbar>
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu"
+    >
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <a mat-menu-item routerLink="products">
+        <mat-icon>forest</mat-icon>
+        <span>Products</span>
+      </a>
+      <a mat-menu-item routerLink="cart">
+        <mat-icon>shopping_cart</mat-icon>
+        <span>Shopping Cart</span>
+      </a>
+      <a mat-menu-item routerLink="about-us">
+        <mat-icon>info</mat-icon>
+        <span>About Us</span>
+      </a>
+      <a mat-menu-item routerLink="contact-us">
+        <mat-icon>contact_page</mat-icon>
+        <span>Contact Us</span>
+      </a>
+    </mat-menu>
+    <span class="spacer"></span>
+
+    <span>Bonsai Store App</span>
+    <span class="spacer"></span>
+    <button
+      mat-icon-button
+      class="icon"
+      aria-label="Shopping Cart Icon"
+      routerLink="cart"
+    >
+      <mat-icon
+        matBadge="0"
+        matBadgeColor="warn"
+        matBadgePosition="above before"
+        >shopping_cart</mat-icon
+      >
+    </button>
+  </mat-toolbar>
+</p>
+
+<nav>
+  <a
+    class="button"
+    routerLink="products"
+    routerLinkActive="activebutton"
+    ariaCurrentWhenActive="page"
+  >
+    <mat-icon>forest</mat-icon>
+    Products
+  </a>
+  |
+  <a
+    class="button"
+    routerLink="cart"
+    routerLinkActive="activebutton"
+    aruaCurrentWhenActive="page"
+  >
+    <mat-icon>shopping_cart</mat-icon>
+    Shopping Cart
+  </a>
+  |
+  <a
+    class="button"
+    routerLink="about-us"
+    routerLinkActive="activebutton"
+    ariaCurrentWhenActive="page"
+  >
+    <mat-icon>info</mat-icon>
+    About Us
+  </a>
+  |
+  <a
+    class="button"
+    routerLink="contact-us"
+    routerLinkActive="activebutton"
+    aruaCurrentWhenActive="page"
+  >
+    <mat-icon>contact_page</mat-icon>
+    Contact Us
+  </a>
+</nav>
+<router-outlet></router-outlet>
+<router-outlet name="404"></router-outlet>
