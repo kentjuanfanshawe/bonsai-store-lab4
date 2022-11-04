@@ -21,7 +21,7 @@ export class ProductDetailComponent implements OnInit {
   ) {}
 
   addToCart(product: Product) {
-    // this._cartService.addItem(product, 1);
+    this._cartService.addItem(product, 1);
     window.alert('Your product has been added to the cart!');
   }
 
@@ -31,8 +31,8 @@ export class ProductDetailComponent implements OnInit {
     const productIdFromRoute = Number(routeParams.get('productId'));
 
     this.products = this._productsService.getProducts();
-    // this.product = this.products.find(
-    //   (product) => product.id === productIdFromRoute
-    // );
+    this.product = this.products.find(
+      (product) => product.id === productIdFromRoute
+    );
   }
 }
