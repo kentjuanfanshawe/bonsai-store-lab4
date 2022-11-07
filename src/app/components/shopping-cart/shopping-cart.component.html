@@ -9,32 +9,16 @@
       </td>
       <td>
         <thead>
-          Price
-        </thead>
-      </td>
-      <td>
-        <thead>
           Quantity
         </thead>
       </td>
-      <td>
-        <thead>
-          Total Price
-        </thead>
-      </td>
     </tr>
-    <tr *ngFor="let item of cart">
+    <tr *ngFor="let item of cartItems">
       <td>
-        {{ item.name }}
-      </td>
-      <td>
-        {{ item.price }}
+        {{ item.productId }}
       </td>
       <td>
         {{ item.quantity }}
-      </td>
-      <td>
-        {{ item.totalPrice }}
       </td>
     </tr>
   </table>

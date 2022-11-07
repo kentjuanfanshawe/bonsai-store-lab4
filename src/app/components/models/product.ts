@@ -6,6 +6,6 @@ export interface Product {
   altPicture: string;
   price: number;
   quantity: number;
-  totalPrice?: number;
   rate?: number;
+  totalPrice?: number;
 }
