@@ -1,6 +1,5 @@
-import { identifierName } from '@angular/compiler';
-import { Injectable, EventEmitter, Output } from '@angular/core';
-import { filter, Observable, Observer } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Observable, Observer } from 'rxjs';
 import { ShoppingCart } from '../components/models/cart';
 import { CartItem } from '../components/models/cart-item';
 import { Product } from '../components/models/product';
@@ -15,7 +14,10 @@ export class CartService {
     Observer<ShoppingCart>
   >();
 
-  private _products: Product[] = [];
+  private _products: Product[];
+  // TODO: implement storage
+
+  // added totalPrice
   totalPrice!: number;
 
   constructor(private _productService: ProductsService) {

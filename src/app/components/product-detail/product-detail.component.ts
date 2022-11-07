@@ -12,7 +12,7 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class ProductDetailComponent implements OnInit {
   products: Product[] = [];
-  product!: Product;
+  product?: Product;
 
   constructor(
     private _productsService: ProductsService,
