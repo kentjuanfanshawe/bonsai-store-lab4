@@ -38,7 +38,11 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
     BrowserAnimationsModule,
     RouterModule.forRoot([
       { path: 'products', component: ProductsListComponent },
-      { path: 'products/:productId', component: ProductDetailComponent },
+      {
+        path: 'products/:productId',
+        children: [{ path: ':productName', component: ProductDetailComponent }],
+        component: ProductDetailComponent,
+      },
       { path: 'cart', component: ShoppingCartComponent },
       { path: 'about-us', component: AboutUsComponent },
       { path: 'contact-us', component: ContactUsComponent },

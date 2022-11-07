@@ -32,7 +32,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this._routes = this._router.config
       .map((route) => route.path)
       .filter((route) => route != '**');
-    console.log(this._routes);
+    // console.log(this._routes);
     this._event$ = this._router.events.subscribe((event: NavigationEvent) => {
       if (event instanceof NavigationEnd) {
         console.log(event.url);
