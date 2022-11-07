@@ -51,7 +51,7 @@ export class CartService {
     item.quantity += quantity;
     cart.items = cart.items.filter((cartItem) => cartItem.quantity > 0);
 
-    this.calculateCart(cart);
+    // this.calculateCart(cart);
     // this.save(cart)
     this.dispatch(cart);
   }
@@ -64,15 +64,15 @@ export class CartService {
     return cart;
   }
 
-  private calculateCart(cart: ShoppingCart): void {
-    cart.itemsTotal = cart.items
-      .map(
-        (item) =>
-          item.quantity *
-          this._products.find((p) => p.id === item.productId).price
-      )
-      .reduce((previous, current) => previous + current, 0);
-  }
+  // private calculateCart(cart: ShoppingCart): void {
+  //   cart.itemsTotal = cart.items
+  //     .map(
+  //       (item) =>
+  //         item.quantity *
+  //         this._products.find((p) => p.id === item.productId).price
+  //     )
+  //     .reduce((previous, current) => previous + current, 0);
+  // }
 
   private save(cart: ShoppingCart): void {}
 
