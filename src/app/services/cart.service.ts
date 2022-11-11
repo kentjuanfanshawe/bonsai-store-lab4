@@ -45,10 +45,13 @@ export class CartService {
     if (item === undefined) {
       item = new CartItem();
       item.productId = product.id;
+      item.price = product.price;
       cart.items.push(item);
     }
-
+    // add quantity per add to cart
     item.quantity += quantity;
+
+    // remove all the products that have a quantity equal to zero.
     cart.items = cart.items.filter((cartItem) => cartItem.quantity > 0);
 
     // this.calculateCart(cart);
