@@ -21,6 +21,7 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
   public products!: Product[];
   public cart!: Observable<ShoppingCart>;
   public itemCount!: number;
+  public grossTotal!: number;
   public cartItems!: CartItem[];
 
   private _cartSubscription!: Subscription;
@@ -40,7 +41,13 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
       this.itemCount = cart.items
         .map((x) => x.quantity)
         .reduce((p, n) => p + n, 0);
+      // this.grossTotal = cart.items
+      //   .map((x) => x.price)
+      //   .reduce((p, n) => p + n, 0);
     });
+
+    // console.log(this.itemCount);
+    // console.log(this.grossTotal);
   }
 
   public ngOnDestroy(): void {
